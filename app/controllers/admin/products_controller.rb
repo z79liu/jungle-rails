@@ -8,6 +8,7 @@ class Admin::ProductsController < ApplicationController
     @product = Product.new
   end
 
+
   def create
     @product = Product.new(product_params)
 
@@ -16,7 +17,7 @@ class Admin::ProductsController < ApplicationController
     else
       render :new
     end
-  end
+  end   
 
   def destroy
     @product = Product.find params[:id]
