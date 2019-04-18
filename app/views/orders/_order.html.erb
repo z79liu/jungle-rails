@@ -1,0 +1,33 @@
+  <h4> <%= order.email %>  </h4>
+    <% order.line_items.each do |line_items| %>
+<tr>
+    <%# <%= image_tag  %> 
+  <td>
+    <%= line_items.product.name %>
+  </td>
+
+  <td>
+    <%= line_items.product.description %>
+  </td>
+
+   <td>
+    <%= line_items.quantity %>
+  </td>
+
+  <td>
+    $ <%= line_items.item_price_cents / 100 * line_items.quantity%>
+  </td>
+
+  <td>
+  <%= image_tag(line_items.product.image, size: "250x250")%>
+  </td>
+</tr>
+    <% end %>
+<tr>
+  <td colspan="4">
+    Total Price
+  <td>
+   $ <%= order.total_cents / 100%>
+  </td>
+</tr>
+
