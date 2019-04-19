@@ -1,0 +1,27 @@
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+ <div class="col-sm-8">
+        <dl class="dl-horizontal">
+          <dt>Name</dt>
+          <dd> <%= @users.find(review.user_id).first_name%> <%=  @users.find(review.user_id).last_name %> </dd>
+          <dt>Description</dt>
+          <dd> <%= review.description %></dd>
+          <dt>Product Rating</dt>
+          <dd> 
+            <%=review.rating%>
+            <% for i in (1..review.rating) do %>  
+             <span class="fa fa-star"></span>
+            <% end %>
+          </dd>
+          <dt>Created at:</dt>
+          <dd><%= review.created_at %></dd>
+          <% if (current_user.id == review.user_id) %>
+          <dt> delete </dt>
+          <dd>
+            Delete me
+            <%= link_to fa_icon('trash'), [@product, review], class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
+          </dd>
+
+          <% end %>
+        </dl>
+      </div>

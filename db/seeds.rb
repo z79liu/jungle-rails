@@ -132,5 +132,19 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+puts "recreating reviews"
+User.create(
+  first_name: 'John',
+  last_name: 'Cena',
+  email: 'haozai_03@hotmail.com',
+  password_digest: "Qwjqyx93"
+)
+
+Review.create(
+  description: 'good quality',
+  rating: '3',
+  user_id: 1,
+  product_id: 3
+)
 
 puts "DONE!"

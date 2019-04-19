@@ -25,6 +25,27 @@
         </dl>
       </div>
     </div>
+    <br>
+    <br>
+   <%  if current_user %> 
+    <article class="reviews">
+    <h2>Submit a review:</h2>
+    <div>
+       <%=form_for [@product, Review.new] do |f| %>
+        Description: <%= f.text_field :description %>  <br>
+        Rating: <%= f.select :rating, options_for_select([["Select One", ""], 1, 2, 3, 4, 5]), :class => 'genForm_dropBox' %>
+        <br>
+        <%= f.submit %>    
+        <% end %>
+    </div>
+    <article>
+    <% end %>
+
+      <h3>Customer's reviews:</h3>
+      
+      <div>
+        <%= render @reviews, locals: {product: @product} %>
+      </div>
 
   </article>
 
