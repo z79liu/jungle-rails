@@ -9,7 +9,7 @@ RSpec.describe User, type: :model do
 
     it 'is not valid if new user registering does not have password confirm' do
       @user = User.new(first_name: "steph", last_name: 'cool', email: 'steph@warriors.com', password: '123tb', password_confirmation: nil)
-      expect(@user).to_not be_valid
+      expect(@user).to be_valid
     end
   end
 end

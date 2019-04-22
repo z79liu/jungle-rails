@@ -15,13 +15,15 @@
           </dd>
           <dt>Created at:</dt>
           <dd><%= review.created_at %></dd>
-          <% if (current_user.id == review.user_id) %>
-          <dt> delete </dt>
-          <dd>
-            Delete me
-            <%= link_to fa_icon('trash'), [@product, review], class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
-          </dd>
+          <%  if current_user %> 
+            <% if (current_user.id == review.user_id) %>
+            <dt> delete </dt>
+            <dd>
+              Delete me
+              <%= link_to fa_icon('trash'), [@product, review], class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
+            </dd>
 
+            <% end %>
           <% end %>
         </dl>
       </div>
