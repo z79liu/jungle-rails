@@ -12,3 +12,4 @@ class Product < ActiveRecord::Base
   validates :category, presence: true
 
 end
+ 
