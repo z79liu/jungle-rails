@@ -140,11 +140,5 @@ User.create(
   password_digest: "Qwjqyx93"
 )
 
-Review.create(
-  description: 'good quality',
-  rating: '3',
-  user_id: 1,
-  product_id: 3
-)
 
 puts "DONE!"
