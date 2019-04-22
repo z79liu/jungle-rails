@@ -6,3 +6,4 @@ class Category < ActiveRecord::Base
   #   Product.where(category_id: id)
   # end
 end
+  
