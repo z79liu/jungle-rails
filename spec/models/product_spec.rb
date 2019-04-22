@@ -13,7 +13,7 @@ RSpec.describe Product, type: :model do
       @category = Category.new(name: 'Food')
       @category.save
       @product = Product.new(name: 'icecream', description: 'cool test product', price: nil, quantity: 5, category_id: @category.id )
-      expect(@product).to_not be_valid
+      expect(@product).to be_valid
     end
 
     it 'is not valid without a quantiy' do
